@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="couchbase"     fetch="git://github.com/couchbase/"         review="review.couchbase.org" />
+  <remote name="couchbase-priv" fetch="ssh://git@github.com/couchbase/"    review="review.couchbase.org" />
+  <remote name="couchbasedeps" fetch="git://github.com/couchbasedeps/"     review="review.couchbase.org" />
+  <remote name="couchbaselabs" fetch="git://github.com/couchbaselabs/"     review="review.couchbase.org" />
+  <remote name="blevesearch"   fetch="git://github.com/blevesearch/" />
+
+  <default remote="couchbase" revision="master" />
+
+  <!-- Core Couchbase Server projects -->
+ <!--
+  <project name="backup" revision="46b0e793e7ed30638099752f1c78668783cd3576" remote="couchbase-priv" path="goproj/src/github.com/couchbase/backup" groups="notdefault,enterprise"/>
+  <project name="cbft" revision="ab185c3e57c4423b5836713653f9fcccbb6609d3" path="goproj/src/github.com/couchbase/cbft"/>
+  <project name="cbgt" revision="eb79bf552d0992f5d790b25b6ebba9b633a259a2" path="goproj/src/github.com/couchbase/cbgt"/>
+  <project name="cbq-gui" revision="5aadb3da8133f0cb61fc8bcccc183e5e13496413" remote="couchbase-priv" path="goproj/src/github.com/couchbase/cbq-gui"  groups="notdefault,enterprise"/>
+  <project name="cbsummary" revision="dbef5f85dd9cb1f97d32879ae681090b2b4f7751" path="goproj/src/github.com/couchbase/cbsummary"/>
+  <project name="couchbase-cli" revision="567dcdd72af72abd8dcf6b4b171168b48d772531"/>
+  <project name="couchdb" revision="3cf258de6f4b75ba732fbb6f9df7c9d658f2a2f0"/>
+-->
+  <project name="couchstore" revision="5525660b7cdb982807501909bf5ceced72b26e35" groups="kv"/>
+<!--
+  <project name="docloader" revision="a3e08dbd13c353b4c360e502b65f1a1254b6f2a8" path="goproj/src/github.com/couchbase/docloader" />
+  <project name="forestdb" revision="9c4bf80357cbfd76d97f5b7745535da692540f71" groups="kv"/>
+  <project name="geocouch" revision="e41c993a9c2f915aa72dc982d4ac69b3c46bb7e9"/>
+  <project name="goxdcr"   revision="6d935762d1c2791b8231b72a8b80aba63fcb69e6"  path="goproj/src/github.com/couchbase/goxdcr" />
+  <project name="gometa"   revision="73108a510f7e39cb7cc167b857a3a2453ea5343b"  path="goproj/src/github.com/couchbase/gometa"/>
+  <project name="indexing" revision="803930127167969b66b50d30abb0f21b679e1641"  path="goproj/src/github.com/couchbase/indexing"/>
+-->
+  <project name="kv_engine" revision="5.0.0" groups="kv" depth="1"/><!-- shallow clone -->
+  <project name="moxi"      revision="cd8da46b9b953800d430c8b0aa4667790727ed6f" groups="kv"/>
+<!--
+  <project name="nitro"     revision="4f5714e663ad109e0ad1bdcbcf48d226179d62f5" path="goproj/src/github.com/couchbase/nitro"/>
+  <project name="plasma"    revision="875e540ab06c12f6b5f4d08e765a3ed894db9173" path="goproj/src/github.com/couchbase/plasma" remote="couchbase-priv" groups="notdefault,enterprise"/>
+  <project name="ns_server" revision="a8a655b1d85af485e0412c2fc39ea48c0262e760"/>
+-->
+  <project name="phosphor"  revision="f4c71b44bfa05fcb904026e29367b10087b3753d" groups="kv"/>
+  <project name="platform"  revision="b1c6f34c42e3681a1e8f9d3c1fb4ae11b0f0b589" groups="kv"/>
+<!--
+  <project name="query"     revision="5769006505c4c4aeb7c7b2e5cbbba5190cffea44" path="goproj/src/github.com/couchbase/query"/>
+  <project name="query-ui"  revision="cb0b9e65ab430d8aaa657743805316fa5e5d5f31"/>
+-->
+  <project name="sigar"     revision="79ee06355851960858ed76f5633b661a9eff80f9" groups="kv"/>
+  <project name="subjson"   revision="85ed622c5959fa1c20c83993aec0e2293d7fd20f" groups="kv"/>
+<!--
+  <project name="testrunner" revision="7783dc91a1eeaeb8f85d43407aa198b5eb72f826"/>
+-->
+  <project name="tlm"        revision="75d1270fb457722896a49fa514488781b97aada2" groups="kv">
+    <copyfile src="GNUmakefile"    dest="GNUmakefile"    />
+    <copyfile src="Makefile"       dest="Makefile"       />
+    <copyfile src="CMakeLists.txt" dest="CMakeLists.txt" />
+    <copyfile src="dot-clang-format" dest=".clang-format" />
+  </project>
+
+  <!-- Go support libraries - Couchbase-supported -->
+
+  <!-- Go support libraries - Bleve-supported -->
+
+  <!-- Go support libraries - third-party -->
+
+  <!-- C/C++ support libraries -->
+  <project name="benchmark"      remote="couchbasedeps" revision="9e3465560240ffb242b50a47cb7f19251a12ee42" groups="kv"/>
+  <project name="googletest"     remote="couchbasedeps" revision="f397fa5ec6365329b2e82eb2d8c03a7897bbefb5" groups="kv"/>
+
+  <!-- Couchbase internal build infrastructure -->
+  <project name="build" revision="26e475522800c534972746502b03b30eb2c5b2ee" path="cbbuild" groups="notdefault,build" upstream="spock">
+    <annotation name="VERSION" value="5.0.0"/>
+    <annotation name="BLD_NUM" value="3519"/>
+    <annotation name="RELEASE" value="spock"/>
+    <annotation name="EDITION" value="@EDITION@"/>
+  </project>
+<!--
+  <project name="voltron" remote="couchbase-priv" revision="34a6913a5f767f614cbff1f231ae5162562b0842" groups="notdefault,packaging" />
+  <project name="couchdbx-app" revision="a4b3b3e67f1374cb1c4ae89a9ab0d155556d6d93" groups="notdefault,packaging" />
+-->
+</manifest>
