@@ -32,7 +32,7 @@
   <project name="plasma" path="goproj/src/github.com/couchbase/plasma" remote="couchbase-priv" groups="notdefault,enterprise" revision="41a40c59d17e4911ba1207863358cdb174e23fb4"/>
   <project name="eventing" path="goproj/src/github.com/couchbase/eventing" groups="notdefault,enterprise" revision="0e337ae9d2b8dbe48157e6096684d435ce8abda3"/>
 -->
-  <project name="kv_engine" revision="610e6d3880b15f43ab9f55a8b15069a43e8d6065" groups="kv"/>
+  <project name="kv_engine" revision="610e6d3880b15f43ab9f55a8b15069a43e8d6065" groups="kv" depth="1"/><!-- shallow clone -->
   <project name="libcouchbase" revision="081e8b16b991bf706eb77f8243935c6fba31b895" groups="notdefault,enterprise"/>
   <project name="moxi" groups="kv" revision="cd8da46b9b953800d430c8b0aa4667790727ed6f"/>
 <!--
