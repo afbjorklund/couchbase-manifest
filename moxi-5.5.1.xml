@@ -76,6 +76,9 @@
   <!-- C/C++ support libraries -->
   <project name="benchmark" remote="couchbasedeps" revision="9e3465560240ffb242b50a47cb7f19251a12ee42" groups="kv"/>
   <project name="googletest" remote="couchbasedeps" revision="f397fa5ec6365329b2e82eb2d8c03a7897bbefb5" groups="kv"/>
+  <project name="gsl-lite" remote="couchbasedeps" revision="57542c7e7ced375346e9ac55dad85b942cfad556" path="third_party/gsl-lite" groups="kv"/>
+  <project name="spdlog" remote="couchbasedeps" revision="4fba14c79f356ae48d6141c561bf9fd7ba33fabd" path="third_party/spdlog" groups="kv"/>
+  <project name="HdrHistogram_c" remote="couchbasedeps" revision="d200fc0f68695d4aef1fad5c3c8cc55f8c033014" path="third_party/HdrHistogram_c" groups="kv"/>
 
   <!-- Couchbase internal build infrastructure -->
   <project name="build" revision="6dbdd36a0ab7cc77ae2236c20bdc445076e8e5f2" path="cbbuild" groups="notdefault,build" upstream="vulcan">
