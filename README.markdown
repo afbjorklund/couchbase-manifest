@@ -40,3 +40,8 @@ contributing changes towards a Couchbase release.
 The toy/ directory is used by Couchbase developers for experimental builds,
 and so are probably not of interest to anyone not familiar with the context
 of the experiment.
+
+## Moxi Only Builds
+
+There are some stripped copies of the couchbase-server manifests called "moxi".
+These have _only_ the dependencies needed to build moxi, for a smaller download.
