@@ -45,3 +45,6 @@ of the experiment.
 
 There are some stripped copies of the couchbase-server manifests called "moxi".
 These have _only_ the dependencies needed to build moxi, for a smaller download.
+
+In order to build, use a flag to only build the KV part - and then "ninja moxi":
+`cmake -GNinja -DCOUCHBASE_KV_COMMIT_VALIDATION=true`
